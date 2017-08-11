@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="AddInfo.action" method="post">
+        姓名：<input type="text" name="studName" placeholder="姓名"><br>
+        密码：<input type="password" name="password" placeholder="密码"><br>
+        性别：<input type="radio" name="sex" value="男" checked="checked">男<input type="radio" name="sex" value="女">女<br>
+        爱好：<input type="checkbox" name="likes" value="体育">体育
+             <input type="checkbox" name="likes" value="音乐">音乐
+             <input type="checkbox" name="likes" value="艺术">艺术<br>
+        自我介绍：
+             <textarea rows="10" cols="30" name="intro">自我介绍</textarea><br>
+        <input type="submit" value="注册个人信息">
+    </form>
+    <img src="imgs/car.png" />
+    <img src="showImage.action">
+    <a href="imgs/car.png">下载Car.png图片</a>
+    <a href="download.action">下载Car图片</a>
+</body>
+</html>

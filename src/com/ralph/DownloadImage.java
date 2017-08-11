@@ -1,32 +1,31 @@
 package com.ralph;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 /**
  * Created by guozhanxian on 2017/8/11.
  */
-public class ShowImage extends HttpServlet
+public class DownloadImage extends HttpServlet
 {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
-        resp.setContentType("image/png");
+        resp.setContentType("bin");
+        resp.addHeader("Content-Disposition","attachment;filename=\"car.png\"");
+
         OutputStream os = resp.getOutputStream();
 
-        String imgPath = "imgs/car.png";
-        ServletContext ctx = getServletContext();
-        String realPath = ctx.getRealPath(imgPath);
-        System.out.println(realPath);
+        String path = getServletContext().getRealPath("imgs/car.png");
+        InputStream is = new FileInputStream(path);
 
-        File file = new File(realPath);
-        InputStream is = new FileInputStream(file);
-        byte[] res = new byte[1024*5];
-
+        byte[] res = new byte[1024*3];
         int length = 0;
         while((length=is.read(res))>0)
         {

@@ -11,4 +11,49 @@
         <servlet-name>HelloServlet</servlet-name>
         <url-pattern>/hello.php</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddInfo</servlet-name>
+        <servlet-class>com.ralph.AddInfo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddInfo</servlet-name>
+        <url-pattern>/AddInfo.action</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ShowHeader</servlet-name>
+        <servlet-class>com.ralph.ShowHeader</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowHeader</servlet-name>
+        <url-pattern>/showHeader.action</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ShowImage</servlet-name>
+        <servlet-class>com.ralph.ShowImage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowImage</servlet-name>
+        <url-pattern>/showImage.action</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>DownloadImage</servlet-name>
+        <servlet-class>com.ralph.DownloadImage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DownloadImage</servlet-name>
+        <url-pattern>/download.action</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>RefreshServlet</servlet-name>
+        <servlet-class>com.ralph.RefreshServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RefreshServlet</servlet-name>
+        <url-pattern>/refresh.action</url-pattern>
+    </servlet-mapping>
 </web-app>
