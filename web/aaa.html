@@ -19,6 +19,12 @@
     <img src="imgs/car.png" />
     <img src="showImage.action">
     <a href="imgs/car.png">下载Car.png图片</a>
-    <a href="download.action">下载Car图片</a>
+    <a href="download.action">下载Car图片</a><br>
+    验证码：<img src="randomImage.action" /><a style="color:blue;text-decoration: underline;cursor: pointer" onclick="refresh(this)">刷新</a>
+    <script>
+        function refresh(obj) {
+            obj.previousSibling.src = "randomImage.action?str"+new Date().getTime();
+        }
+    </script>
 </body>
 </html>

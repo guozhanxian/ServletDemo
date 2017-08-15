@@ -56,4 +56,21 @@
         <servlet-name>RefreshServlet</servlet-name>
         <url-pattern>/refresh.action</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ShowFiles</servlet-name>
+        <servlet-class>com.ralph.web.ShowFiles</servlet-class>
+        <init-param>
+            <param-name>filedir</param-name>
+            <param-value>/Users/guozhanxian/Documents/农业大学7041</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowFiles</servlet-name>
+        <url-pattern>/showFiles.action</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>10</session-timeout>
+    </session-config>
 </web-app>

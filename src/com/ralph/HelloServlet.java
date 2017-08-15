@@ -1,12 +1,13 @@
 package com.ralph;
 
+import javax.servlet.SingleThreadModel;
 import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
  * Created by guozhanxian on 2017/8/9.
  */
-public class HelloServlet extends javax.servlet.http.HttpServlet
+public class HelloServlet extends javax.servlet.http.HttpServlet implements SingleThreadModel
 {
     private int i = 1;
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException
@@ -18,7 +19,10 @@ public class HelloServlet extends javax.servlet.http.HttpServlet
     {
         response.setContentType("text/html;charset=utf-8");
         PrintWriter out = response.getWriter();
-        out.println("<html><head><meata charset=\"utf-8\"></head><body><h1>Hello World"+(i++)+hashCode()+"</h1></body></html>");
+        synchronized ("aaa")
+        {
+            out.println("<html><head><meata charset=\"utf-8\"></head><body><h1>Hello World"+(i++)+hashCode()+"</h1></body></html>");
+        }
         out.flush();
         out.close();
     }
