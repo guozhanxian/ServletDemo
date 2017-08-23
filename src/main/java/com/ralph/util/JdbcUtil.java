@@ -31,9 +31,6 @@ public class JdbcUtil
     public static Connection getConnection() throws Exception
     {
         Connection conn = null;
-//        Class.forName("com.mysql.jdbc.Driver");
-//        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hello??useUnicode=true&characterEncoding=utf-8","root","mysql");
-//
         Class.forName(CLASS_NAME);
         conn = DriverManager.getConnection(DB_URL,DB_USER,DB_PWD);
 
