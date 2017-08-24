@@ -19,7 +19,7 @@
 </head>
 <body>
 <div style="width:60%;margin: auto auto;">
-    <form action="addDrug.action" method="post" id="form1">
+    <form action="addDrug2.action" method="post" id="form1" enctype="multipart/form-data">
     <fieldset>
         <legend>
             添加药品信息
@@ -41,6 +41,10 @@
             <input type="date" name="drugDate"/>
         </div>
         <div class="form-group">
+            <label>药品图片:</label>
+            <input type="file" name="drugPic"/>
+        </div>
+        <div class="form-group">
             <label></label>
             <button onclick="addDrug()">添加</button>
         </div>
@@ -54,6 +58,7 @@
             <th>药品价格</th>
             <th>药品出厂日期</th>
             <th>操作</th>
+            <th>药品图片</th>
         </tr>
         </thead>
         <tbody>
@@ -66,11 +71,12 @@
                 <td class="'text-center'">
                     <button>Delete</button>
                 </td>
+                <td><img src="upload/${d.drug_id}/${d.drug_pic}" width="64" height="64"></td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
-    <div style="width:30%;margin: auto auto;">
+    <div>
         <ul class="pagination">
             <li>
                 <c:if test="${requestScope.p.currentPage>1}">

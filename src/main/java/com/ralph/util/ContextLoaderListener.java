@@ -19,6 +19,13 @@ public class ContextLoaderListener implements ServletContextListener
     {
         //容器启动执行
         ServletContext ctx = servletContextEvent.getServletContext();
+        try
+        {
+            JdbcUtil.getConnection();
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
         System.out.println("系统已经启动。");
     }
 

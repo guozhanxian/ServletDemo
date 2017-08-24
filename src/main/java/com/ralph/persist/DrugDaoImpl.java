@@ -43,7 +43,7 @@ public class DrugDaoImpl implements DrugDao
                 d.setDrug_name(rs.getString("drug_name"));
                 d.setDrug_price(rs.getDouble("drug_price"));
                 d.setDrug_date(rs.getDate("drug_date"));
-
+                d.setDrug_pic(rs.getString("drug_pic"));
                 list.add(d);
             }
         }catch (Exception e){
@@ -60,11 +60,12 @@ public class DrugDaoImpl implements DrugDao
         try
         {
             conn = JdbcUtil.getConnection();
-            ps = conn.prepareStatement("insert into drug values(?,?,?,?)");
+            ps = conn.prepareStatement("insert into drug values(?,?,?,?,?)");
             ps.setInt(1,d.getDrug_id());
             ps.setString(2,d.getDrug_name());
             ps.setDouble(3,d.getDrug_price());
             ps.setDate(4,d.getDrug_date());
+            ps.setString(5,d.getDrug_pic());
 
             ps.executeUpdate();
         }catch (Exception e){
@@ -111,6 +112,7 @@ public class DrugDaoImpl implements DrugDao
                 d.setDrug_name(rs.getString("drug_name"));
                 d.setDrug_price(rs.getDouble("drug_price"));
                 d.setDrug_date(rs.getDate("drug_date"));
+                d.setDrug_pic(rs.getString("drug_pic"));
 
                 list.add(d);
             }

@@ -7,6 +7,17 @@ public class Drug {
   private String drug_name;
   private Double drug_price;
   private java.sql.Date drug_date;
+  private String drug_pic;
+
+  public String getDrug_pic()
+  {
+    return drug_pic;
+  }
+
+  public void setDrug_pic(String drug_pic)
+  {
+    this.drug_pic = drug_pic;
+  }
 
   public Integer getDrug_id()
   {

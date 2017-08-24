@@ -10,4 +10,6 @@ package com.ralph.util;
 public abstract class Constants
 {
     public static final int ITEM_PER_PAGE = 3;
+
+    public static final int THRESHOLD_FILE_SIZE = 1024*1024*3;
 }
